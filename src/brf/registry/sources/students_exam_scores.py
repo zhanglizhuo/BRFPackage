@@ -1,13 +1,5 @@
-"""Students Exam Scores (Kaggle).
-
-30,641 US high school students. Target: math score.
-Group: EthnicGroup (5 groups).
-"""
-
-import numpy as np
-
+"""Students Exam Scores (Kaggle)."""
 from . import DatasetSource, register_source
-
 
 @register_source
 class StudentsExamScoresSource(DatasetSource):
@@ -19,7 +11,7 @@ class StudentsExamScoresSource(DatasetSource):
     reference = "Kaggle: Students Exam Scores"
     task = "regression"
     n_samples = 30641
-    n_features = 14
+    n_features = 17
     n_groups = 5
     sha256 = "e08f2f4d11f9187c685d84eabd3dee72bbf0e514e940bff3bfacf341ee43f71d"
     grouping_description = "Ethnic group (5 groups)"
@@ -46,7 +38,6 @@ class StudentsExamScoresSource(DatasetSource):
 
         path = self.download()
         df = pd.read_csv(str(path))
-        # Drop unnamed index column
         if 'Unnamed: 0' in df.columns:
             df = df.drop(columns=['Unnamed: 0'])
 

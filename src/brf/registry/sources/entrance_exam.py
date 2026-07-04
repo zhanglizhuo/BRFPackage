@@ -1,12 +1,5 @@
-"""Entrance Exam (UCI ID 582).
-
-Download from UCI, one-hot encode, extract target/features/groups.
-"""
-
-import numpy as np
-
+"""Entrance Exam (UCI ID 582)."""
 from . import DatasetSource, register_source
-
 
 @register_source
 class EntranceExamSource(DatasetSource):
@@ -44,7 +37,8 @@ class EntranceExamSource(DatasetSource):
             return csv_path
         for f in dest_dir.glob("**/*.csv"):
             if "entrance" in f.name.lower() or "582" in f.name:
-                return f
+                shutil.copy(str(f), str(csv_path))
+                return csv_path
         return dest_dir
 
     def prepare(self):

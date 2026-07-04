@@ -27,7 +27,7 @@ class BRFAnalyzer:
             raise ValueError("n_splits must be >= 2")
         self.n_splits = n_splits
         self.n_permutations = n_permutations
-        self.model = model or Ridge(alpha=1.0)
+        self.model = model if model is not None else Ridge(alpha=1.0)
         self.seed = seed
         self.scale = scale
 

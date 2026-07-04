@@ -1,13 +1,7 @@
-"""Student Dropout (UCI ID 697).
-
-Download from UCI. Target: Graduate/Dropout (binary, Enrolled excluded).
-Group: Course (17 programs).
-"""
-
+"""Student Dropout (UCI ID 697)."""
 import numpy as np
 
 from . import DatasetSource, register_source
-
 
 @register_source
 class StudentDropoutSource(DatasetSource):
@@ -34,7 +28,10 @@ class StudentDropoutSource(DatasetSource):
         with zipfile.ZipFile(io.BytesIO(resp.read())) as z:
             z.extractall(str(dest_dir))
         for f in dest_dir.glob("**/*.csv"):
-            if "dropout" in f.name.lower() or "697" in f.name:
+            return f
+        # Fallback: any file
+        for f in dest_dir.glob("**/*"):
+            if f.is_file():
                 return f
         return dest_dir
 
@@ -42,7 +39,7 @@ class StudentDropoutSource(DatasetSource):
         import pandas as pd
 
         path = self.download()
-        df = pd.read_csv(str(path))
+        df = pd.read_csv(str(path), sep=None, engine='python')
         df = df[df["Target"] != "Enrolled"].copy()
         y = (df["Target"] == "Graduate").astype(float).values
         groups = df["Course"].astype(str).values
