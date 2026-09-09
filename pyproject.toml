@@ -37,8 +37,8 @@ dependencies = [
 brf = "brf.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/zhanglizhuo/BenchmarkReliability"
-Repository = "https://github.com/zhanglizhuo/BenchmarkReliability"
+Homepage = "https://github.com/zhanglizhuo/BRFPackage"
+Repository = "https://github.com/zhanglizhuo/BRFPackage"
 
 [tool.setuptools]
 license-files = []
