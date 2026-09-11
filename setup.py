@@ -9,8 +9,9 @@ setup(
         "brf.registry": ["manifest.yaml"],
     },
     install_requires=[
-        "numpy>=1.18",
-        "scikit-learn>=0.24",
+        "numpy>=1.21",
+        "scikit-learn>=1.0",
+        "matplotlib>=3.5",
         "pandas>=1.1",
         "scipy>=1.5",
         "openml>=0.12",

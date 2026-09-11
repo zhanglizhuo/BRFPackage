@@ -254,7 +254,7 @@ class BRFAnalyzer:
         """Percentile rank of S and E against the BRF Registry v1.5 benchmarks.
 
         Returns percentiles (0-100) indicating where this dataset's S and E
-        fall relative to the 25 audited benchmarks. Requires the registry
+        fall relative to the 27 audited benchmarks (frozen v1.5 baseline). Requires the registry
         data to be accessible.
         """
         if not self._fitted:

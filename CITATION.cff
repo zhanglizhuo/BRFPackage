@@ -14,8 +14,8 @@ identifiers:
     value: "https://github.com/zhanglizhuo/BenchmarkReliability"
 repository-code: "https://github.com/zhanglizhuo/BenchmarkReliability"
 license: "MIT"
-version: "0.1.5"
-date-released: 2026-06-30
+version: "0.3.0"
+date-released: 2026-09-11
 preferred-citation:
   type: article
   authors:
@@ -23,4 +23,6 @@ preferred-citation:
       given-names: "Lizhuo"
   title: "BehaviorAudit: a four-dimension pre-modeling audit protocol for educational prediction benchmarks"
   journal: "Scientific Reports"
-  status: "under review"
+  year: 2026
+  doi: "10.1038/s41598-026-69629-6"
+  status: "published"

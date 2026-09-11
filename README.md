@@ -38,7 +38,7 @@ print(analyzer.diagnose()["summary"])
 for dim, issue in analyzer.diagnose()["details"].items():
     print(f"  {dim}: {issue}")
 
-# Percentile rank against 25 audited benchmarks
+# Percentile rank against the 27 audited benchmarks (frozen v1.5 baseline)
 print(analyzer.rank())
 # {'S_percentile': 16.0, 'E_percentile': 36.0, ...}
 
@@ -95,7 +95,7 @@ communication shorthand only --- **the signal is in the continuous values**.
 
 Use `analyzer.diagnose()` for per-dimension explanations and actionable
 recommendations, or `analyzer.rank()` to see percentile scores against
-the 25 benchmarks in the BRF Registry.
+the 27 benchmarks in the BRF Registry (frozen v1.5 baseline).
 
 ## CLI Reference
 
@@ -135,7 +135,7 @@ The behavior audit protocol is described in:
 
 > Zhang, L. *BehaviorAudit: a four-dimension protocol for auditing
 > benchmark reliability under group-aware evaluation.*
-> Scientific Reports (under review).
+> Scientific Reports (2026). https://doi.org/10.1038/s41598-026-69629-6
 
 ## Related Work
 
