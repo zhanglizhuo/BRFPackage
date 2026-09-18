@@ -251,10 +251,10 @@ class BRFAnalyzer:
         }
 
     def rank(self) -> Dict[str, float]:
-        """Percentile rank of S and E against the BRF Registry v1.5 benchmarks.
+        """Percentile rank of S and E against the BRF Registry v2.1 benchmarks.
 
         Returns percentiles (0-100) indicating where this dataset's S and E
-        fall relative to the 27 audited benchmarks (frozen v1.5 baseline). Requires the registry
+        fall relative to the audited benchmarks in the bundled Registry reference (v2.1). Requires
         data to be accessible.
         """
         if not self._fitted:
@@ -273,7 +273,7 @@ class BRFAnalyzer:
         return {
             "S_percentile": round(pctile(s_vals, self.S), 1),
             "E_percentile": round(pctile(e_vals, self.E), 1),
-            "reference": f"BRF Registry v1.5 ({len(s_vals)} benchmarks)",
+            "reference": f"BRF Registry v2.1 ({len(s_vals)} benchmarks)",
         }
 
     def recommend(self, n_samples: Optional[int] = None,
@@ -316,12 +316,9 @@ class BRFAnalyzer:
         """Load Registry reference data for percentile ranking."""
         if self._registry_ref is not None:
             return self._registry_ref
-        # Search for registry_v1.5.json in known locations
+        # Bundled registry reference (ships with the package at brf/registry/)
         candidates = [
-            Path(__file__).parent.parent.parent.parent
-            / "BRFRegistry" / "results" / "registry_v1.5.json",
-            Path(__file__).parent.parent.parent
-            / "BRFRegistry" / "results" / "registry_v1.5.json",
+            Path(__file__).parent / "registry" / "registry_v2.1.json",
         ]
         for p in candidates:
             if p.exists():

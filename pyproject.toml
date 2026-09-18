@@ -48,7 +48,7 @@ where = ["src"]
 include = ["brf", "brf.metrics", "brf.phase", "brf.registry", "brf.registry.sources", "brf.report"]
 
 [tool.setuptools.package-data]
-"brf.registry" = ["manifest.yaml"]
+"brf.registry" = ["manifest.yaml", "registry_v2.1.json"]
 
 [tool.setuptools.exclude-package-data]
 "brf.registry" = ["cache/*", "cache/**/*"]

@@ -1,74 +1,66 @@
-# BRF Benchmark Registry Manifest
-# https://github.com/zhanglizhuo/BRFRegistry
-
-version: "2.1"
-release_date: "2026-09-10"
-total_datasets: 51
-
-description: >
-  Curated collection of group-aware benchmark datasets across education,
-  engineering, transportation, energy, healthcare, finance, environmental,
-  business, sports, and fitness domains with standardized metadata,
-  reproducibility scripts, and BRF (Benchmark Reliability Framework)
-  audit results. v2.1 expands from 35 to 51 datasets. All source modules
-  are self-contained.
-
-datasets:
-  - abalone
-  - air_quality
-  - airfoil
-  - assistments
-  - auto_mpg
-  - bike_sharing
-  - boston_housing
-  - breast_cancer
-  - california_housing
-  - ccpp
-  - college_scorecard
-  - colleges_aaup
-  - colleges_usnews
-  - concrete
-  - cpu_act
-  - credit_card
-  - customer_churn
-  - diabetes
-  - energy_building
-  - energy_efficiency
-  - entrance_exam
-  - german_credit
-  - higher_ed
-  - kaggle_students_performance
-  - kdd_cup_2010
-  - law_school
-  - linnerud
-  - mathe
-  - mm_tba
-  - nursery
-  - oli
-  - oulad
-  - pisa2015
-  - pollution
-  - real_estate
-  - sea_level
-  - seoul_bike
-  - sports_perf
-  - student_absences
-  - student_depression
-  - student_dropout
-  - student_health
-  - students_exam_scores
-  - sulfate_ion
-  - tae
-  - turkiye
-  - uci_student
-  - uci_student_math
-  - wine_quality
-  - xapi_edu
-  - yacht
-
 brf_results:
-  reliable: 35
-  void: 16
   fragile: 0
+  reliable: 42
+  void: 9
+datasets:
+- abalone
+- air_quality
+- airfoil
+- assistments
+- auto_mpg
+- bike_sharing
+- boston_housing
+- breast_cancer
+- california_housing
+- ccpp
+- college_scorecard
+- colleges_aaup
+- colleges_usnews
+- concrete
+- cpu_act
+- credit_card
+- customer_churn
+- diabetes
+- energy_building
+- energy_efficiency
+- entrance_exam
+- german_credit
+- higher_ed
+- kaggle_students_performance
+- kdd_cup_2010
+- law_school
+- linnerud
+- mathe
+- mm_tba
+- nursery
+- oli
+- oulad
+- pisa2015
+- pollution
+- real_estate
+- climate_weather
+- seoul_bike
+- olympics
+- student_absences
+- student_depression
+- student_dropout
+- student_health
+- students_exam_scores
+- electricity
+- tae
+- turkiye
+- uci_student
+- uci_student_math
+- wine_quality
+- xapi_edu
+- yacht
+description: 'Curated collection of group-aware benchmark datasets across education,
+  engineering, transportation, energy, healthcare, finance, environmental, business,
+  sports, and fitness domains with standardized metadata, reproducibility scripts,
+  and BRF (Benchmark Reliability Framework) audit results. v2.1 expands from 35 to
+  51 datasets. All source modules are self-contained.
 
-schema_version: "2.1.0"
+  '
+release_date: '2026-09-10'
+total_datasets: 51
+version: '2.1'

@@ -38,9 +38,9 @@ print(analyzer.diagnose()["summary"])
 for dim, issue in analyzer.diagnose()["details"].items():
     print(f"  {dim}: {issue}")
 
-# Percentile rank against the 27 audited benchmarks (frozen v1.5 baseline)
+# Percentile rank against the 51 benchmarks in the BRF Registry (v2.1 reference)
 print(analyzer.rank())
-# {'S_percentile': 16.0, 'E_percentile': 36.0, ...}
+# {'S_percentile': 17.6, 'E_percentile': 27.5, 'reference': 'BRF Registry v2.1 (51 benchmarks)'}
 
 # One-paragraph recommendation
 print(analyzer.recommend())
@@ -95,7 +95,7 @@ communication shorthand only --- **the signal is in the continuous values**.
 
 Use `analyzer.diagnose()` for per-dimension explanations and actionable
 recommendations, or `analyzer.rank()` to see percentile scores against
-the 27 benchmarks in the BRF Registry (frozen v1.5 baseline).
+the 51 benchmarks in the BRF Registry (v2.1 reference).
 
 ## CLI Reference
 

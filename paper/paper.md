@@ -34,9 +34,10 @@ with permutation null models. Two summary coordinates---Signal Identifiability
 meaningful model comparison. A structured diagnostic report explains *why*
 a benchmark is in its current state (rather than assigning an opaque label)
 and recommends concrete actions. The package also includes a built-in registry
-of 16 group-aware educational datasets with download, SHA-256 verification, and
-standardized preprocessing, plus a command-line interface (`brf audit`,
-`brf registry sync`).
+of 51 group-aware prediction benchmarks---education-centric, with cross-domain
+coverage across 36 domains and 10 countries---with download, SHA-256
+verification, and standardized preprocessing, plus a command-line interface
+(`brf audit`, `brf registry sync`).
 
 # Statement of Need
 
@@ -54,11 +55,11 @@ dataset itself before model training.
 `benchmark-reliability` fills this gap. It is designed for researchers who
 build, curate, or use predictive benchmarks and want to know: *does this
 dataset support reproducible model comparisons?* The package has been used
-to audit 25 educational prediction benchmarks as part of the BRF Registry
+to audit 51 group-aware benchmarks as part of the BRF Registry
 [@zhang2025registry], revealing that the theoretically possible "Fragile"
 regime (signal present but group structure inadequate) was never observed
-across all 25 audited datasets---a negative result that challenges assumptions
-about benchmark design.
+across all 51 audited benchmarks---a negative result that challenges
+assumptions about benchmark design.
 
 # Functionality
 
@@ -71,21 +72,22 @@ about benchmark design.
   returns per-dimension explanations with context-aware recommendations
   (e.g., "Only N=151 samples (~6 per group). Increase to 300+").
 
-- **Percentile Ranking.** `analyzer.rank()` compares the dataset against the
-  25 benchmarks in the BRF Registry, providing S and E percentile scores.
+- **Percentile Ranking.** `analyzer.rank()` compares the dataset against the 51
+  benchmarks in the BRF Registry (v2.1 reference), providing S and E percentile
+  scores.
 
-- **Built-in Registry.** 16 Dataset-as-Code modules in `brf.registry` provide
+- **Built-in Registry.** 51 Dataset-as-Code modules in `brf.registry` provide
   download (`brf registry sync`), SHA-256 verification, and standardized
-  preprocessing for group-aware educational benchmarks.
+  preprocessing for group-aware prediction benchmarks.
 
 - **CLI.** `brf audit <dataset>` runs a full audit; `brf registry list` shows
   available datasets; `brf registry info <key>` shows metadata.
 
 # Research Application
 
-The package underpins the BRF Benchmark Registry v1.5 [@zhang2025registry], a
-versioned collection of 25 group-aware educational prediction benchmark entries
-used for a meta-analysis of benchmark reliability. The BehaviorAudit protocol
+The package underpins the BRF Benchmark Registry v2.1 [@zhang2025registry], a
+versioned collection of 51 group-aware prediction benchmark entries used for a
+meta-analysis of benchmark reliability. The BehaviorAudit protocol
 [@zhang2025behavior], which originated the BRF measurement dimensions, used an
 early version of this package to audit seven datasets.
 

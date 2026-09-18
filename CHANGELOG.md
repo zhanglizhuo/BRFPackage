@@ -3,7 +3,7 @@
 ## 0.3.0 (2026-09-11)
 
 - Registry v2.1: 51 unique datasets (25 educational + 26 cross-domain: health, finance, environment, energy, transportation, systems); 58 entries incl. 7 alt-grouping views
-- BRF results: 35 Reliable / 16 Void / 0 Fragile
+- BRF results: 42 Reliable / 9 Void / 0 Fragile (pisa2015 re-sourced to the official OECD PUF 2026-09-14: Void -> Reliable)
 - Version chain unified at 0.3.0 (pyproject.toml, setup.py, CITATION.cff, `brf.__version__`, bundled registry manifest)
 - Bundled registry manifest synced to v2.1 (was v1.5)
 - `brf` now exposes a queryable `brf.__version__`
