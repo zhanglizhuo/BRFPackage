@@ -26,6 +26,9 @@ class KDDCup2010Source(DatasetSource):
         train_file = dest_dir / "algebra_2005_2006_train.txt"
         if train_file.exists():
             return train_file
+        # A prior download extracts into a subdir; reuse it offline.
+        for cand in dest_dir.rglob("algebra_2005_2006_train.txt"):
+            return cand
 
         urls = [self.source_url] + self.fallback_urls
         for url in urls:

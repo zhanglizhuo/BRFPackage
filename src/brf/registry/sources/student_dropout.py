@@ -24,6 +24,10 @@ class StudentDropoutSource(DatasetSource):
         csv_path = dest_dir / "student_dropout.csv"
         if csv_path.exists():
             return csv_path
+        # A prior download keeps the extracted csv under its original name
+        # (e.g. data.csv); reuse it offline instead of re-downloading.
+        for f in dest_dir.glob("**/*.csv"):
+            return f
         resp = urllib.request.urlopen(self.source_url, timeout=60)
         with zipfile.ZipFile(io.BytesIO(resp.read())) as z:
             z.extractall(str(dest_dir))
