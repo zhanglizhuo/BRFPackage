@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "benchmark-reliability"
-version = "0.3.0"
+version = "0.3.1"
 description = "Benchmark Reliability Framework (BRF) - dataset-level reliability auditing with built-in benchmark registry"
 readme = "README.md"
 license = { text = "MIT" }
@@ -48,7 +48,7 @@ where = ["src"]
 include = ["brf", "brf.metrics", "brf.phase", "brf.registry", "brf.registry.sources", "brf.report"]
 
 [tool.setuptools.package-data]
-"brf.registry" = ["manifest.yaml", "registry_v2.1.json"]
+"brf.registry" = ["manifest.yaml", "registry_v2.1.json", "prepare_hashes.json"]
 
 [tool.setuptools.exclude-package-data]
 "brf.registry" = ["cache/*", "cache/**/*"]

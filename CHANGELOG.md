@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1 (2026-09-30)
+
+- **Fix: the bundled `prepare_hashes.json` was the v2.0 (35-dataset) file.** The copy shipped inside the package still carried the frozen 35-entry cohort, and 30 of its 35 hashes conflicted with the registry's v2.1 values, so `brf registry verify` scored 5/51 instead of 51/51 against the installed package. Replaced with the 51-entry v2.1 file from `BRFRegistry/registry/prepare_hashes.json`.
+- **Fix: `prepare_hashes.json` is now packaged.** It was absent from `[tool.setuptools.package-data]`, so the layer-2 prepared-array check that the Data Descriptor reports was unreachable from an installed wheel. `brf/registry/verify.py` already resolved the path relative to the package directory; it now ships.
+- `download()` offline-cache fallback for `kdd_cup_2010` (rglob prior extract) and `student_dropout` (extra CSV reuse), matching the Track A 2026-09-24 re-run behaviour. No effect on data or results.
+
 ## 0.3.0 (2026-09-11)
 
 - Registry v2.1: 51 unique datasets (25 educational + 26 cross-domain: health, finance, environment, energy, transportation, systems); 58 entries incl. 7 alt-grouping views
