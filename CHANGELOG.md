@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.3 (2026-10-01)
+
+- **Fix: the version chain was broken in 0.3.2.** The 0.3.0 entry records the chain as unified across `pyproject.toml`, `setup.py`, `CITATION.cff`, `brf.__version__` and the bundled registry manifest, but 0.3.2 updated only `pyproject.toml` and `brf.__version__`, leaving `setup.py` and `CITATION.cff` at 0.3.0. A reader inspecting either file would have seen a different version from the one reported at runtime and from the one on PyPI. The bundled manifest carries the registry version (2.1), which is a separate quantity and is unchanged.
+- **Fix: 21 of the 51 dataset cards had an empty `task.type`.** The cards split the field into `type` and `target`, and the 21 affected cards recorded only `target` (for example `binary (Graduate/Dropout)` or `ordinal 3-class (Low/Medium/High)`), so the value was present in prose but absent from the typed field the schema defines. All 51 now carry a `type` consistent with the corresponding source module's `task`. No count changes: the regression/classification split is 40/11 and is read from the source modules, which already agreed.
+- `MANIFEST.in` referenced `sn-nature.bst` and `sn-mathphys-num.bst`, which live in the Scientific Data manuscript directory and not in this package. The patterns matched nothing and setuptools skipped them silently, so twine check passed regardless. Removed.
+- `version_policy.yaml`: the mm_tba entry attributed the figshare HTTP 403 to requiring a proxy in mainland China, which was not verified and may not be the cause. It now records what was actually observed, that the metadata endpoint returned 403 when checked on 2026-10-01, and that a cached extraction from a successful 2026-09-12 fetch is present.
+
 ## 0.3.2 (2026-10-01)
 
 - **Fix: `mm_tba` file-level SHA-256 could never be reproduced.** The source's `download()` returns the cache root, and the figshare archive unpacks a full research code release alongside the data: `Teacher_Action_Detection/my_mmaction` (1919 files), yolo `dense_proposals_*.pkl` files, and 51 `__pycache__` `.pyc` files. The directory hash therefore covered 2666 files of which `prepare()` reads 419, and the `.pyc` bytes depend on when and under which interpreter they were written, so any reader recomputing the digest saw MISMATCH. `DatasetSource.hash_scope()` is a new hook that limits a directory digest to the files a loader consumes; `mm_tba` uses it to cover `metadata.xlsx` plus the 418 transcript and GPT-report files. Its recorded digest is regenerated over that scope.
