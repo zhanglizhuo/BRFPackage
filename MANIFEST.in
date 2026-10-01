@@ -6,8 +6,3 @@
 # than via package-data.
 include verification/*.txt
 include verification/*.md
-
-# The alternate reference style stays available for reuse of the class file
-# even though the manuscript selects sn-nature.
-include sn-nature.bst
-include sn-mathphys-num.bst

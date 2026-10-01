@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.4 (2026-10-01)
+
+- **Fix: `MANIFEST.in` still named two files that are not in this package.** The 0.3.3 entry said they had been removed; they had not, because the edit that was meant to remove them stopped early. `sn-nature.bst` and `sn-mathphys-num.bst` live in the Scientific Data manuscript directory, so both patterns matched nothing and setuptools skipped them silently. twine check reports on the built distribution rather than on whether the manifest is satisfiable, so it passed with the stale lines still present, and the 0.3.3 sdist shipped without those files. Removed.
+- `scripts/check_consistency.py` is available from the repository tree alongside the package (see BRFRegistry). Fourteen checks across both trees: the version chain, package-data and MANIFEST.in patterns against real files, byte-level agreement of the registry trees, card fields against the source modules, the SHA coverage quoted in `version_policy.yaml`, and that every registry source parses. Exits non-zero on failure.
+
 ## 0.3.3 (2026-10-01)
 
 - **Fix: the version chain was broken in 0.3.2.** The 0.3.0 entry records the chain as unified across `pyproject.toml`, `setup.py`, `CITATION.cff`, `brf.__version__` and the bundled registry manifest, but 0.3.2 updated only `pyproject.toml` and `brf.__version__`, leaving `setup.py` and `CITATION.cff` at 0.3.0. A reader inspecting either file would have seen a different version from the one reported at runtime and from the one on PyPI. The bundled manifest carries the registry version (2.1), which is a separate quantity and is unchanged.
