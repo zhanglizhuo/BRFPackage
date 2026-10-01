@@ -1,0 +1,55 @@
+# brf registry prepare verification — canonical content hash — Python 3.8.20
+# generated 2026-10-01 07:25:34 CST
+# command: python scripts/compute_prepare_hashes.py --verify
+#
+  abalone... OK (3f7c6c66fdec85a6...)
+  air_quality... OK (4ee091d7c6cd29c2...)
+  airfoil... OK (48bcb721e3e8fce3...)
+  assistments... OK (9bd474c2e85e0778...)
+  auto_mpg... OK (a8b5a265bf2aada3...)
+  bike_sharing... OK (6759530a726ce5bb...)
+  boston_housing... OK (1626353c69b1b1bc...)
+  breast_cancer... ERROR: No module named 'sklearn'
+  california_housing... ERROR: No module named 'sklearn'
+  ccpp... OK (84f5f83018d7030f...)
+  climate_weather... ERROR: No module named 'sklearn'
+  college_scorecard... OK (2de9c254016f6d93...)
+  colleges_aaup... OK (a98f7f115c3fc707...)
+  colleges_usnews... ERROR: No module named 'scipy'
+  concrete... OK (3c4b71924aa1f5b7...)
+  cpu_act... OK (12e266a8e018e51f...)
+  credit_card... ERROR: No module named 'sklearn'
+  customer_churn... ERROR: No module named 'sklearn'
+  diabetes... ERROR: No module named 'sklearn'
+  electricity... ERROR: No module named 'sklearn'
+  energy_building... OK (c045e11976d5c01f...)
+  energy_efficiency... OK (3d75f02739b5e4f3...)
+  entrance_exam... OK (43bca05374772861...)
+  german_credit... ERROR: No module named 'sklearn'
+  higher_ed... OK (59be6940c05cd59b...)
+  kaggle_students_performance... ERROR: No module named 'kagglehub'
+  kdd_cup_2010... OK (b7d8e2aef91cbc6a...)
+  law_school... OK (b1f33959f2f4a362...)
+  linnerud... ERROR: No module named 'sklearn'
+  mathe... OK (ac788168060595a0...)
+  mm_tba... ERROR: No module named 'openpyxl'
+  nursery... OK (afd19fc4496c3904...)
+  oli... OK (a7d2ccf40aaf65ab...)
+  olympics... OK (4429c726958ccc09...)
+  oulad... OK (9aa535d041c9f390...)
+  pisa2015... ERROR: No module named 'pyreadstat'
+  pollution... OK (5768d5b4509b398f...)
+  real_estate... OK (1c67624e20a3948c...)
+  seoul_bike... OK (03d8e2b26f08a21a...)
+  student_absences... ERROR: No module named 'kagglehub'
+  student_depression... OK (f6f0f65bebafaea7...)
+  student_dropout... OK (c01207db62dc1ac9...)
+  student_health... ERROR: No module named 'kagglehub'
+  students_exam_scores... OK (336969cba9ef0bb7...)
+  tae... OK (356cb12fda2ff552...)
+  turkiye... OK (fef1729ce8edf310...)
+  uci_student... OK (7f5a7696641b3586...)
+  uci_student_math... OK (2cbf9c120016bb28...)
+  wine_quality... OK (e26239cad8e85992...)
+  xapi_edu... OK (6470f36422d4ba1e...)
+  yacht... OK (527653450af99bdb...)

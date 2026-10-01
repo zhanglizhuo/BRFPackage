@@ -33,6 +33,21 @@ dependencies = [
     "openml>=0.12",
 ]
 
+# Seven of the 51 datasets need a reader that is not part of the core stack:
+# kagglehub for 5 Kaggle-hosted sources, pyreadstat for the PISA 2015 .sav
+# files, openpyxl for the Taiwan .xlsx files. They are optional rather than
+# required because pyreadstat needs the system-level libreadstat, which would
+# otherwise be imposed on every install for the sake of 44 datasets.
+# pyreadstat also needs libreadstat present on the system, e.g.
+#   Debian/Ubuntu: apt-get install libreadstat-dev
+#   macOS:         brew install readstat
+[project.optional-dependencies]
+full = [
+    "kagglehub>=0.1",
+    "openpyxl>=3.1",
+    "pyreadstat>=1.2",
+]
+
 [project.scripts]
 brf = "brf.cli:main"
 
