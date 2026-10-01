@@ -1,0 +1,13 @@
+# verification/ holds the archived output of
+#   python scripts/compute_prepare_hashes.py --verify
+# under two interpreters, plus the superseded 3.8 run that motivated the
+# canonical content hash. It is evidence for the prepare-level digests rather
+# than package code, so it lives outside src/brf and is included here rather
+# than via package-data.
+include verification/*.txt
+include verification/*.md
+
+# The alternate reference style stays available for reuse of the class file
+# even though the manuscript selects sn-nature.
+include sn-nature.bst
+include sn-mathphys-num.bst

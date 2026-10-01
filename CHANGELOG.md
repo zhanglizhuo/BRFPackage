@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.2 (2026-10-01)
+
+- **Fix: `mm_tba` file-level SHA-256 could never be reproduced.** The source's `download()` returns the cache root, and the figshare archive unpacks a full research code release alongside the data: `Teacher_Action_Detection/my_mmaction` (1919 files), yolo `dense_proposals_*.pkl` files, and 51 `__pycache__` `.pyc` files. The directory hash therefore covered 2666 files of which `prepare()` reads 419, and the `.pyc` bytes depend on when and under which interpreter they were written, so any reader recomputing the digest saw MISMATCH. `DatasetSource.hash_scope()` is a new hook that limits a directory digest to the files a loader consumes; `mm_tba` uses it to cover `metadata.xlsx` plus the 418 transcript and GPT-report files. Its recorded digest is regenerated over that scope.
+- **Fix: the dataset cards and policy files the Data Descriptor points to were not installable.** The manuscript names `registry/cards/`, `registry/taxonomy.yaml` and `registry/version_policy.yaml` as artefacts a reader can obtain, but `[tool.setuptools.package-data]` listed only `manifest.yaml`, `registry_v2.1.json` and `prepare_hashes.json`, so those three paths did not exist in an installed wheel. All 51 cards and both YAML files are now packaged; the wheel grows from 72 to 125 files.
+
 ## 0.3.1 (2026-09-30)
 
 - **Fix: the bundled `prepare_hashes.json` was the v2.0 (35-dataset) file.** The copy shipped inside the package still carried the frozen 35-entry cohort, and 30 of its 35 hashes conflicted with the registry's v2.1 values, so `brf registry verify` scored 5/51 instead of 51/51 against the installed package. Replaced with the 51-entry v2.1 file from `BRFRegistry/registry/prepare_hashes.json`.
