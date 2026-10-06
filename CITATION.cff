@@ -14,8 +14,8 @@ identifiers:
     value: "https://github.com/zhanglizhuo/BenchmarkReliability"
 repository-code: "https://github.com/zhanglizhuo/BenchmarkReliability"
 license: "MIT"
-version: "0.3.4"
-date-released: 2026-09-11
+version: "0.3.5"
+date-released: 2026-10-03
 preferred-citation:
   type: article
   authors:

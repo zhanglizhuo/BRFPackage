@@ -4,5 +4,16 @@
 # canonical content hash. It is evidence for the prepare-level digests rather
 # than package code, so it lives outside src/brf and is included here rather
 # than via package-data.
-include verification/*.txt
-include verification/*.md
+  include verification/*.txt
+  include verification/*.md
+  # The metadata declares MIT; the license text and the changelog must travel
+  # with the distribution even though they are not package code. 0.3.1-0.3.4
+  # shipped neither in the wheel or the sdist.
+  include LICENSE
+  include CHANGELOG.md
+  # The test modules travel with the sdist explicitly (not relying on
+  # setuptools' default rules), and the suite can only run from the unpacked
+  # tree if tests/conftest.py comes along: it puts src/ on sys.path, without
+  # which every test fails to import brf.
+  include tests/*.py
+  include tests/conftest.py

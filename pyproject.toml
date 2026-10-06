@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "benchmark-reliability"
-version = "0.3.4"
+version = "0.3.5"
 description = "Benchmark Reliability Framework (BRF) - dataset-level reliability auditing with built-in benchmark registry"
 readme = "README.md"
 license = { text = "MIT" }
@@ -48,6 +48,13 @@ full = [
     "pyreadstat>=1.2",
 ]
 
+[tool.pytest.ini_options]
+# Restrict collection to the project's own tests. Without this, a bare
+# `pytest` at the repo root also collects third-party test trees under
+# src/brf/registry/cache/ (e.g. the vendored mm_tba repository), producing
+# ~94 collection errors.
+testpaths = ["tests"]
+
 [project.scripts]
 brf = "brf.cli:main"
 
@@ -56,7 +63,7 @@ Homepage = "https://github.com/zhanglizhuo/BRFPackage"
 Repository = "https://github.com/zhanglizhuo/BRFPackage"
 
 [tool.setuptools]
-license-files = []
+license-files = ["LICENSE"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -224,11 +224,25 @@ class BRFAnalyzer:
             issues["M"] = (f"Weak group structure (M={self.M:.3f}).")
             suggestions["M"] = "Use a finer-grained grouping variable if available."
         elif self.M < 0.5:
-            issues["M"] = (f"Moderate group structure (M={self.M:.3f}).")
-            suggestions["M"] = None
+            if 0 < g < 5:
+                issues["M"] = (f"Moderate group balance (M={self.M:.3f}) "
+                               f"across only {g} group(s).")
+                suggestions["M"] = (f"Only {g} group(s). Add group annotations "
+                                   f"with >=5 categories for meaningful cross-group evaluation.")
+            else:
+                issues["M"] = (f"Moderate group structure (M={self.M:.3f}).")
+                suggestions["M"] = None
         else:
-            issues["M"] = (f"Strong group structure (M={self.M:.3f}).")
-            suggestions["M"] = None
+            if 0 < g < 5:
+                issues["M"] = (f"High group balance (M={self.M:.3f}) but only {g} group(s). "
+                               f"M reflects balance and entropy of the existing groups; "
+                               f"with fewer than 5 groups, cross-group generalization "
+                               f"evidence is limited.")
+                suggestions["M"] = (f"Only {g} group(s). Add group annotations "
+                                   f"with >=5 categories for meaningful cross-group evaluation.")
+            else:
+                issues["M"] = (f"Strong group structure (M={self.M:.3f}).")
+                suggestions["M"] = None
 
         # --- Synthesis ---
         if self.S <= 0:
