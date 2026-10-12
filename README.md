@@ -123,19 +123,19 @@ To cite the BRF framework and package (JOSS paper forthcoming):
 
 ```bibtex
 @software{zhang2026brf,
-  author = {Lizhuo Zhang},
+  author = {Zhang, Lizhuo},
   title = {benchmark-reliability: Benchmark Reliability Framework},
   url = {https://github.com/zhanglizhuo/BRFPackage},
-  version = {0.3.0},
+  version = {0.3.5},
   year = {2026},
 }
 ```
 
-The behavior audit protocol is described in:
+The structural-reliability audit protocol is described in:
 
-> Zhang, L. *BehaviorAudit: a four-dimension protocol for auditing
-> benchmark reliability under group-aware evaluation.*
-> Scientific Reports (2026). https://doi.org/10.1038/s41598-026-69629-6
+> Ma, Y. and Zhang, L. *Limited Structural Reliability in Public Educational
+> Prediction Benchmarks: A Four-Dimension Audit of Seven Datasets.*
+> Scientific Reports 16(1) (2026). https://doi.org/10.1038/s41598-026-69629-6
 
 ## Related Work
 
