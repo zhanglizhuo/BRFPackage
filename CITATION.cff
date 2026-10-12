@@ -1,28 +1,41 @@
 cff-version: 1.2.0
-title: "BenchmarkReliability: Benchmark Reliability Framework (BRF)"
-message: "If you use this software, please cite both the BehaviorAudit paper and the software itself."
+title: "benchmark-reliability: Benchmark Reliability Framework (BRF)"
+message: "If you use this software, please cite the Structural Reliability audit paper and the software itself."
 type: software
 authors:
   - family-names: "Zhang"
     given-names: "Lizhuo"
-    email: "zhanglizhuo@gmail.com"
-    orcid: ""
+    email: "zhanglizhuo@hunau.edu.cn"
+    orcid: "https://orcid.org/0009-0000-1592-8969"
+  - family-names: "Li"
+    given-names: "Jiayi"
+    email: "lijiayi@stu.hunau.edu.cn"
+    orcid: "https://orcid.org/0009-0004-9866-3642"
+  - family-names: "Liu"
+    given-names: "Bo"
+    email: "l-tb@hunau.edu.cn"
+  - family-names: "Li"
+    given-names: "Changyun"
+    affiliation: "School of Artificial Intelligence, Hunan Agricultural University"
 identifiers:
   - type: url
     value: "https://pypi.org/project/benchmark-reliability/"
   - type: url
-    value: "https://github.com/zhanglizhuo/BenchmarkReliability"
-repository-code: "https://github.com/zhanglizhuo/BenchmarkReliability"
+    value: "https://github.com/zhanglizhuo/BRFPackage"
+repository-code: "https://github.com/zhanglizhuo/BRFPackage"
 license: "MIT"
 version: "0.3.5"
-date-released: 2026-10-03
+date-released: 2026-10-07
 preferred-citation:
   type: article
   authors:
+    - family-names: "Ma"
+      given-names: "Yan"
     - family-names: "Zhang"
       given-names: "Lizhuo"
-  title: "BehaviorAudit: a four-dimension pre-modeling audit protocol for educational prediction benchmarks"
+  title: "Limited Structural Reliability in Public Educational Prediction Benchmarks: A Four-Dimension Audit of Seven Datasets"
   journal: "Scientific Reports"
+  volume: 16
   year: 2026
   doi: "10.1038/s41598-026-69629-6"
   status: "published"

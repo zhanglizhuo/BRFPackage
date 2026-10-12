@@ -8,10 +8,19 @@ tags:
   - dataset quality
 authors:
   - name: Lizhuo Zhang
+    orcid: 0009-0000-1592-8969
+    affiliation: 1
+  - name: Jiayi Li
+    orcid: 0009-0004-9866-3642
+    affiliation: 1
+  - name: Bo Liu
+    orcid: ~
+    affiliation: 1
+  - name: Changyun Li
     orcid: ~
     affiliation: 1
 affiliations:
-  - name: Independent Researcher
+  - name: School of Artificial Intelligence, Hunan Agricultural University, Changsha 410128, China
     index: 1
 date: 1 July 2026
 bibliography: paper.bib
@@ -56,7 +65,7 @@ dataset itself before model training.
 build, curate, or use predictive benchmarks and want to know: *does this
 dataset support reproducible model comparisons?* The package has been used
 to audit 51 group-aware benchmarks as part of the BRF Registry
-[@zhang2025registry], revealing that the theoretically possible "Fragile"
+[@zhang2026registry], revealing that the theoretically possible "Fragile"
 regime (signal present but group structure inadequate) was never observed
 across all 51 audited benchmarks---a negative result that challenges
 assumptions about benchmark design.
@@ -85,10 +94,10 @@ assumptions about benchmark design.
 
 # Research Application
 
-The package underpins the BRF Benchmark Registry v2.1 [@zhang2025registry], a
+The package underpins the BRF Benchmark Registry v2.1 [@zhang2026registry], a
 versioned collection of 51 group-aware prediction benchmark entries used for a
-meta-analysis of benchmark reliability. The BehaviorAudit protocol
-[@zhang2025behavior], which originated the BRF measurement dimensions, used an
+meta-analysis of benchmark reliability. The structural-reliability audit protocol
+[@ma2026audit], which originated the BRF measurement dimensions, used an
 early version of this package to audit seven datasets.
 
 # Acknowledgements
